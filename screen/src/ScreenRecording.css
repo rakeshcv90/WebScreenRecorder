@@ -1,0 +1,182 @@
+/* Additional button styles */
+
+.screen-recording-container {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 50px 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+
+h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.text-muted {
+    font-size: 1rem;
+    color: #777;
+}
+
+.status-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #ff6f61;
+    margin-bottom: 20px;
+}
+
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.close-preview-button,
+.download-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.close-preview-button {
+    background-color: #f44336;
+    /* Red for close */
+}
+
+.close-preview-button:hover {
+    background-color: #e53935;
+    transform: scale(1.05);
+}
+
+.download-button {
+    background-color: #2196f3;
+    /* Blue for download */
+}
+
+.download-button:hover {
+    background-color: #1e88e5;
+    transform: scale(1.05);
+}
+
+/* Adjust button layout in video container */
+.screen .button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.start-button,
+.stop-button {
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    width: 48%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+.start-button:hover {
+    background-color: #4caf50;
+    transform: scale(1.05);
+}
+
+.stop-button:hover {
+    background-color: #e53935;
+    transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+    .card {
+        padding: 15px;
+    }
+
+    .start-button,
+    .stop-button {
+        width: 48%;
+        font-size: 1rem;
+    }
+
+    .status-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        padding: 15px;
+        width: 90%;
+        max-width: none;
+    }
+
+    .start-button,
+    .stop-button {
+        width: 100%;
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .status-text {
+        font-size: 1rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    .text-muted {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .card {
+        padding: 10px;
+        width: 95%;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    .text-muted {
+        font-size: 0.85rem;
+    }
+
+    .status-text {
+        font-size: 1rem;
+    }
+
+    .start-button,
+    .stop-button {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .video-player {
+        max-width: 100%;
+        height: auto;
+    }
+}
