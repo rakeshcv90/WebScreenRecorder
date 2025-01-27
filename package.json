@@ -2,12 +2,21 @@
   "name": "application",
   "version": "0.0.1",
   "description": "This is my test app",
+  "electron": "electron .",
   "main": "main.js",
+  
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron .",
-    "dev:watch": "npx electronmon --trace-warnings .",
-    "electron-builder": "electron-builder"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron-dev": "electron .",
+    "electron:serve": "concurrently -k \"cross-env BROWSER=none npm start\" \"npm run electron:start\"",
+    "electron:build": "npm run build && electron-builder -c.extraMetadata.main=build/main.js",
+    "electron:start": "wait-on http://127.0.0.1:3000 && electron .",
+    "electron-pack": "npm run build && electron-builder -c.extraMetadata.main=main.js",
+    "preelectron-pack": "react-scripts build",
+    "postbuild": "copy main.js build\\"
   },
   "keywords": [
     "electron",
@@ -15,19 +24,15 @@
   ],
   "author": "Rakesh Rao",
   "license": "MIT",
-
   "devDependencies": {
+    "electron": "^34.0.0",
     "electron-builder": "^25.1.8"
   },
   "build": {
     "appId": "com.example.myapp",
-    "productName": "MyApp",
+    "productName": "My Electron App",
     "directories": {
       "output": "dist"
-    },
-    "files": [
-      "build/**/*",
-      "main.js"
-    ]
+    }
   }
 }
